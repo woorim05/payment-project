@@ -12,7 +12,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-@ConditionalOnProperty(name = "globallib.feignclient", havingValue = "on")
 @Configuration
 @RequiredArgsConstructor
 public class FeignConfig {
