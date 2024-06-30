@@ -13,6 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/payments")
 public class PaymentController {
     private final PaymentsServiceFactory paymentsServiceFactory;
 

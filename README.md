@@ -22,6 +22,7 @@
 * Dependencies: build.gradle 참고
   * lombok
   * openFeign
+  * jsonObject
 
 ![springboot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=SpringBoot&logoColor=white) 
 ![gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white) 
