@@ -8,12 +8,13 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class PaymentsServiceFactory {
 
-    private PaymentsService paymentsService;
+    @Resource(name = "KakaoPayService")
+    private KakaoPayService kakaoPayService;
 
     public PaymentsService getPaymentService(String payType) {
         switch (payType.toUpperCase().substring(0, 5)) {
             case "KAKAO":
-                return paymentsService;
+                return kakaoPayService;
             default:
                 throw new IllegalArgumentException("Invalid Payment Type.");
         }

@@ -1,5 +1,6 @@
 package com.example.payment.controller;
 
+import com.example.payment.dto.OrderDto;
 import com.example.payment.dto.ResponseDto;
 import com.example.payment.exception.ServiceException;
 import com.example.payment.service.PaymentsService;
@@ -23,7 +24,7 @@ public class PaymentController {
 
         try {
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
-            Map<String, Object> orderInfo = paymentsService.getOrderInfo(orderId);
+            OrderDto orderInfo = paymentsService.getOrderInfo(orderId);
             Map<String, Object> result = paymentsService.ready(orderInfo);
 
             responseDto = ResponseDto.success(result);
