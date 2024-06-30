@@ -1,6 +1,7 @@
 package com.example.payment.exception;
 
 import com.example.payment.enums.EnumErrorType;
+import com.example.payment.enums.ServiceErrorCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.util.StringUtils;
@@ -27,7 +28,7 @@ public class ServiceException extends RuntimeException {
         this.message = message;
     }
 
-    public ServiceException(EnumErrorType errType, String message, Object data) {
+    public ServiceException(ServiceErrorCode errType, String message, Object data) {
         message = StringUtils.hasText(message) ? message : errType.getDescription();
 
         this.status = errType.getStatus();

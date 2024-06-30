@@ -4,7 +4,7 @@
 ---
 
 ## 💻 프로젝트 소개
-* 결제 수단 별 샘플 RESTful API 구현
+* 'openFeign' 을 활용한 결제 수단 별 샘플 RESTful API 구현
   * [카카오페이](https://github.com/woorim05/payment-project.git)
   * [네이버페이](https://github.com/woorim05/payment-project.git)
   * [페이코](https://github.com/woorim05/payment-project.git)
@@ -20,12 +20,14 @@
 * DataBase: Redis(Amazon-ElastiCache), postgreSQL
 * API: Swagger
 * Dependencies: build.gradle 참고
+  * lombok
+  * openFeign
 
 ![springboot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=SpringBoot&logoColor=white) 
 ![gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white) 
 ![elastiCache](https://img.shields.io/badge/Amazon_ElastiCache-C925D1?style=for-the-badge&logo=AmazonElastiCache&logoColor=white)
 ![postgresql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![intellij](	https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![intellij](https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
 
 ### 💡 환경 변수 설정
 
