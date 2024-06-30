@@ -14,7 +14,7 @@ public class ServiceException extends RuntimeException {
     private String message;
     private Object data;
 
-    public ServiceException(EnumErrorType errType) {
+    public ServiceException(ServiceErrorCode errType) {
         this.status = errType.getStatus();
         this.code = errType.getCode();
         this.message = errType.getDescription();

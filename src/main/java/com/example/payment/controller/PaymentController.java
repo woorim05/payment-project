@@ -45,6 +45,9 @@ public class PaymentController {
         ResponseDto<?> responseDto;
 
         try {
+            // header accessToken에서 userId get
+            paramMap.put("userId", "testUser");
+
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
             Map<String, Object> result = paymentsService.approve(paramMap);
 
@@ -62,12 +65,12 @@ public class PaymentController {
     }
 
     @PostMapping(value = "/cancel/{payMethod}")
-    public ResponseEntity<ResponseDto<?>> cancel(@PathVariable String payMethod, @RequestBody Map<String, Object> paramMap) {
+    public ResponseEntity<ResponseDto<?>> cancel(@PathVariable String payMethod, @RequestBody OrderDto cancelDto) {
         ResponseDto<?> responseDto;
 
         try {
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
-            Map<String, Object> result = paymentsService.cancel(paramMap);
+            Map<String, Object> result = paymentsService.cancel(cancelDto);
 
             responseDto = ResponseDto.success(result);
 

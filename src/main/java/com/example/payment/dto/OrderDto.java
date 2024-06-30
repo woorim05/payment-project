@@ -10,4 +10,9 @@ public class OrderDto {
     private Integer totalQuntity;
     private Integer totalAmount;
     private Integer taxFreeAmount;
+
+    // kakao
+    private String kakaoCid;
+    private String kakaoTid;
+    private String kakaoToken;
 }

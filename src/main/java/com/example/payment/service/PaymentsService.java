@@ -18,6 +18,9 @@ public abstract class PaymentsService {
         orderInfo.setTotalAmount(20000);
         orderInfo.setTaxFreeAmount(0);
 
+        // 가맹점 ID - DB 조회
+        orderInfo.setKakaoCid("TC0ONETIME");
+
         return orderInfo;
     }
 
@@ -25,5 +28,5 @@ public abstract class PaymentsService {
 
     public abstract Map<String, Object> approve(Map<String, Object> orderInfo) throws Exception;
 
-    public abstract Map<String, Object> cancel(Map<String, Object> orderInfo) throws Exception;
+    public abstract Map<String, Object> cancel(OrderDto orderInfo) throws Exception;
 }
