@@ -3,9 +3,7 @@ package com.example.payment.entity;
 import com.example.payment.dto.PaymentsDto;
 import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import java.util.Map;
@@ -14,7 +12,8 @@ import java.util.Map;
 @Entity
 @Table(name = "paymentsDto_log")
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

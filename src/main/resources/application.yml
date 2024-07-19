@@ -31,4 +31,4 @@ spring:
 
 # custom
 payments:
-    redirectUrl: ${CLIENT_REDIRECT_URL}
+    redirectUrl: http://localhost:8080/payments/approve

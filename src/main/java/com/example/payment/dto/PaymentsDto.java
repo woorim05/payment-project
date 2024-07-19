@@ -3,7 +3,6 @@ package com.example.payment.dto;
 import com.example.payment.entity.Payments;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.util.Map;
@@ -11,7 +10,6 @@ import java.util.Map;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
 public class PaymentsDto {
     private Long idx;
     private String userId;

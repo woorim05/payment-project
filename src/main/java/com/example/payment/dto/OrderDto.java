@@ -2,13 +2,11 @@ package com.example.payment.dto;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
 public class OrderDto {
     private String userId;      // 사용자 ID
     private String orderId;     // 주문번호
