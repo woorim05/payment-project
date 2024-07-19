@@ -11,9 +11,7 @@ public class PaymentsServiceFactory {
     private PaymentsService paymentsService;
 
     public PaymentsService getPaymentService(String payType) {
-        switch (payType.toUpperCase().substring(0, 5)) {
-            case "KAKAO":
-                return paymentsService;
+        switch (payType.toUpperCase()) {
             default:
                 throw new IllegalArgumentException("Invalid Payment Type.");
         }

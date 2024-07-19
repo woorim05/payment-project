@@ -14,10 +14,10 @@ public class ServiceException extends RuntimeException {
     private String message;
     private Object data;
 
-    public ServiceException(EnumErrorType errType) {
-        this.status = errType.getStatus();
-        this.code = errType.getCode();
-        this.message = errType.getDescription();
+    public ServiceException(ServiceErrorCode errorCode) {
+        this.status = errorCode.getStatus();
+        this.code = errorCode.getCode();
+        this.message = errorCode.getDescription();
     }
 
     public ServiceException(EnumErrorType errType, String message) {

@@ -1,5 +1,6 @@
 package com.example.payment.controller;
 
+import com.example.payment.dto.PaymentsDto;
 import com.example.payment.dto.ResponseDto;
 import com.example.payment.exception.ServiceException;
 import com.example.payment.service.PaymentsService;
@@ -24,6 +25,7 @@ public class PaymentController {
         try {
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
             Map<String, Object> orderInfo = paymentsService.getOrderInfo(orderId);
+            orderInfo.put("payMethod", payMethod);
             Map<String, Object> result = paymentsService.ready(orderInfo);
 
             responseDto = ResponseDto.success(result);
@@ -45,7 +47,7 @@ public class PaymentController {
 
         try {
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
-            Map<String, Object> result = paymentsService.approve(paramMap);
+            PaymentsDto result = paymentsService.approve(paramMap);
 
             responseDto = ResponseDto.success(result);
 
@@ -60,13 +62,14 @@ public class PaymentController {
         return new ResponseEntity<>(responseDto, HttpStatus.valueOf(responseDto.getStatus()));
     }
 
-    @PostMapping(value = "/cancel/{payMethod}")
-    public ResponseEntity<ResponseDto<?>> cancel(@PathVariable String payMethod, @RequestBody Map<String, Object> paramMap) {
+    @PostMapping(value = "/cancel/{payMethod}/{orderId}")
+    public ResponseEntity<ResponseDto<?>> cancel(@PathVariable String payMethod, @PathVariable String orderId) {
         ResponseDto<?> responseDto;
 
         try {
             PaymentsService paymentsService = paymentsServiceFactory.getPaymentService(payMethod);
-            Map<String, Object> result = paymentsService.cancel(paramMap);
+            PaymentsDto paymentsDto = paymentsService.getPaymentsInfo(payMethod, orderId);
+            Map<String, Object> result = paymentsService.cancel(paymentsDto);
 
             responseDto = ResponseDto.success(result);
 
