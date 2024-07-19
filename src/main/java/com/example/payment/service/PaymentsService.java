@@ -1,12 +1,12 @@
 package com.example.payment.service;
 
+import com.example.payment.dto.OrderDto;
 import com.example.payment.dto.PaymentsDto;
 import com.example.payment.entity.Payments;
 import com.example.payment.repository.PaymentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -19,7 +19,7 @@ public abstract class PaymentsService {
      * @param orderInfo
      * @return
      */
-    public abstract Map<String, Object> ready(Map<String, Object> orderInfo) throws Exception;
+    public abstract Map<String, Object> ready(OrderDto orderInfo) throws Exception;
 
     /**
      * 승인 요청
@@ -41,14 +41,20 @@ public abstract class PaymentsService {
      * @param orderId
      * @return
      */
-    public Map<String, Object> getOrderInfo(String orderId) {
-        Map<String, Object> orderInfo = new HashMap<>();
+    public OrderDto getOrderInfo(String orderId) {
+        // TODO: redis/db 에서 주문 정보 읽어오기
 
         // dummy data
-        orderInfo.put("orderId", orderId);
-        orderInfo.put("urserid", "testUser");
+        OrderDto orderDto = OrderDto.builder()
+                .userId("testUser")
+                .orderId(orderId)
+                .productName("상품명")
+                .productCnt(1)
+                .totalPayAmount(1000)
+                .taxFreeAmount(0)
+                .build();
 
-        return orderInfo;
+        return orderDto;
     }
 
     /**
