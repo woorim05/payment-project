@@ -14,6 +14,10 @@ public enum ServiceErrorCode {
     INVALID_HEADER("03", "비 정상 헤더", HttpStatus.BAD_REQUEST.value()),
     INVALID_PARAM("04", "비 정상 파라미터", HttpStatus.BAD_REQUEST.value()),
     API_RESPONSE_FAIL("05", "API 통신 오류", HttpStatus.INTERNAL_SERVER_ERROR.value()),
+
+    FAIL_READY("06", "준비 요청 실패", HttpStatus.INTERNAL_SERVER_ERROR.value()),
+    FAIL_APPROVE("07", "승인 요청 실패", HttpStatus.INTERNAL_SERVER_ERROR.value()),
+    FAIL_CANCEL("08", "취소 요청 실패", HttpStatus.INTERNAL_SERVER_ERROR.value()),
     ;
 
     private final String code;

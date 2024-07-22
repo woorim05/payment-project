@@ -42,7 +42,7 @@ public class PaymentController {
         return new ResponseEntity<>(responseDto, HttpStatus.valueOf(responseDto.getStatus()));
     }
 
-    @GetMapping(value = "/approve/{payMethod}")
+    @RequestMapping(value = "/approve/{payMethod}")
     public ResponseEntity<ResponseDto<?>> approve(@PathVariable String payMethod, @RequestParam Map<String, Object> paramMap) {
         ResponseDto<?> responseDto;
 
